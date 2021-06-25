@@ -6,5 +6,5 @@ while read f ; do echo $f ; done < list
 cat list | head -1 >> first
 while read f ; do echo $f ; cat $f | awk NR==1 >> results.ssv ; done < first
 ## while read f ; do echo $f ; cat $f | awk NR==2 >> results.ssv ; done < list
-while read f ; do echo $f ; 'cat $f | awk NR==2' >> results.ssv ; done < list
+while read f ; do echo $f `cat $f | awk NR==2` >> results.ssv ; done < list
 echo ......................................... DONE ..............................................
